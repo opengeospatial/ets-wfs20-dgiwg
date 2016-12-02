@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DescribeStoredQueriesResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd" xmlns="http://www.opengis.net/wfs/2.0">
+  <StoredQueryDescription id="urn:ogc:def:query:OGC-WFS::GetFeatureById">
+    <Title>GetFeatureById</Title>
+    <Abstract>Returns the single feature whose value is equal to the specified value of the ID argument</Abstract>
+    <Parameter name="ID" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="xsd:string" />
+    <QueryExpressionText xmlns:app="http://www.deegree.org/app"
+      returnFeatureTypes="app:Airports app:DominantVegetation app:SGID024_Municipalities2004_edited app:SGID024_Springs app:SGID100_CountyBoundaries_edited app:SGID100_LakesDLG100 app:SGID100_RailroadsDLG100 app:SGID100_RoadsDLG100 app:SGID500_Contours1000Ft app:SGID500_Contours2500Ft app:SGID500_Contours500Ft app:SGID500_EnergyResourcesPoly app:SGID500_ZipCodes app:SGID93_GEOSCIENCE_ShallowGroundWater app:SGID93_LOCATION_UDOTMap_CityLocations app:SGID93_WATER_UtahMajorRivers app:StateBoundary app:weathertime"
+      language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression" isPrivate="true" />
+  </StoredQueryDescription>
+  <StoredQueryDescription id="urn:ogc:def:query:OGC-WFS::GetFeatureByType">
+    <Title>GetFeatureByType</Title>
+    <Abstract>Returns a collection of features by type. If returnFeatureTypes='gml:AbstractFeatureType', the query
+      applies to any supported feature type.
+    </Abstract>
+    <Parameter name="typeName" xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:QName">
+      <Abstract>Feature type name (mandatory)</Abstract>
+    </Parameter>
+    <QueryExpressionText xmlns:app="http://www.deegree.org/app"
+      returnFeatureTypes="app:Airports app:DominantVegetation app:SGID024_Municipalities2004_edited app:SGID024_Springs app:SGID100_CountyBoundaries_edited app:SGID100_LakesDLG100 app:SGID100_RailroadsDLG100 app:SGID100_RoadsDLG100 app:SGID500_Contours1000Ft app:SGID500_Contours2500Ft app:SGID500_Contours500Ft app:SGID500_EnergyResourcesPoly app:SGID500_ZipCodes app:SGID93_GEOSCIENCE_ShallowGroundWater app:SGID93_LOCATION_UDOTMap_CityLocations app:SGID93_WATER_UtahMajorRivers app:StateBoundary app:weathertime"
+      language="urn:ogc:def:queryLanguage:OGC-WFS::WFSQueryExpression" />
+  </StoredQueryDescription>
+</DescribeStoredQueriesResponse>
