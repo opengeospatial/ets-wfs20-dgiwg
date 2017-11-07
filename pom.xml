@@ -1,39 +1,82 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>de.latlon</groupId>
-  <artifactId>ets-dgiwg-wfs</artifactId>
+  <groupId>org.opengis.cite</groupId>
+  <artifactId>ets-dgiwg-wfs20</artifactId>
   <version>0.3-SNAPSHOT</version>
-  <name>ets-dgiwg-wfs</name>
-  <description>DGIWG WFS Testsuite</description>
-  
+  <name>ets-dgiwg-wfs20</name>
+  <description>DGIWG WFS 2.0 Testsuite</description>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://opensource.org/licenses/Apache-2.0</url>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>Open Geospatial Consortium</name>
+    <url>http://www.opengeospatial.org</url>
+  </organization>
+
+  <scm>
+    <url>https://github.com/opengeospatial/ets-dgiwg-wfs20</url>
+    <connection>scm:git:https://github.com/opengeospatial/ets-dgiwg-wfs20.git</connection>
+    <developerConnection>scm:git:git@github.com:opengeospatial/ets-dgiwg-wfs20.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <issueManagement>
+    <system>GitHub Issue Tracker</system>
+    <url>https://github.com/opengeospatial/ets-dgiwg-wfs20/issues</url>
+  </issueManagement>
+
+  <developers>
+    <developer>
+      <name>D. Stenger</name>
+      <url>https://github.com/dstenger</url>
+      <timezone>Europe/Berlin</timezone>
+    </developer>
+    <developer>
+      <name>L. Goltz</name>
+      <url>https://github.com/lgoltz</url>
+      <timezone>Europe/Berlin</timezone>
+    </developer>
+    <developer>
+      <name>R. Martell</name>
+      <url>https://github.com/rjmartell</url>
+      <timezone>Canada/Pacific</timezone>
+    </developer>
+  </developers>
+
   <properties>
-    <ets-code>dgiwgwfs20</ets-code>
+    <ets-code>wfs20-dgiwg</ets-code>
     <spec-version>2.0</spec-version>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <buildTimestamp>${maven.build.timestamp}</buildTimestamp>
   </properties>
 
   <build>
     <plugins>
-	  <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.5.1</version>
-          <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
-            <encoding>${project.build.sourceEncoding}</encoding>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.1</version>
-          <configuration>
-            <encoding>${project.build.sourceEncoding}</encoding>
-          </configuration>
-        </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.1</version>
+        <configuration>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -93,7 +136,7 @@
     <dependency>
       <groupId>org.opengis.cite</groupId>
       <artifactId>ets-wfs20</artifactId>
-	  <version>1.25</version>
+      <version>1.25</version>
     </dependency>
     <!-- test -->
     <dependency>
@@ -105,13 +148,13 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-	  <version>1.10.19</version>
+      <version>1.10.19</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>
-	  <version>4.0</version>
+      <version>4.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -153,5 +196,5 @@
       </plugin>
     </plugins>
   </reporting>
-  
+
 </project>
