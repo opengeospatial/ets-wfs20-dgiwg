@@ -8,6 +8,12 @@
   <name>ets-dgiwg-wfs20</name>
   <description>DGIWG WFS 2.0 Testsuite</description>
 
+  <parent>
+    <groupId>org.opengis.cite</groupId>
+    <artifactId>ets-common</artifactId>
+    <version>9</version>
+  </parent>
+
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -131,7 +137,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>ets-dgiwg-core</artifactId>
-      <version>${project.version}</version>
+      <version>0.4-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.opengis.cite</groupId>
@@ -142,13 +148,11 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>1.10.19</version>
       <scope>test</scope>
     </dependency>
     <dependency>
