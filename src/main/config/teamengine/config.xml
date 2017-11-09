@@ -11,7 +11,7 @@
         <prefix>tns</prefix>
         <local-name>ets-${ets-code}-${version}</local-name>
         <title>DGIWG WFS 2.0 Conformance Test Suite</title>
-        <description>Checks DGIWG WFS 2.0 implementations for conformance to DGIWG WFS.</description>
+        <description>Checks DGIWG WFS 2.0 implementations for conformance to DGIWG WFS 2.0 (DGIWG-122).</description>
       </suite>
       <revision>
         <name>${project.version}</name>
