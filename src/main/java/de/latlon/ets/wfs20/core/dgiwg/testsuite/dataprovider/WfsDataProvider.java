@@ -37,11 +37,11 @@ public final class WfsDataProvider {
      * @param wfsCapabilities
      *            the capabilities document (wfs:WFS_Capabilities), never <code>null</code>
      * @return an array of an array with the FeatureType node and parsed Name, never <code>null</code>
-     * @throws XPathFactoryConfigurationException
      * @throws XPathExpressionException
+     *             if the xpath expression could not be evaluated
      */
     public static Object[][] provideFeatureTypeNodes( ProtocolBinding protocolBinding, Document wfsCapabilities )
-                    throws XPathFactoryConfigurationException, XPathExpressionException {
+                            throws XPathExpressionException {
         String xPathMainNodeToParse = "//wfs:FeatureType";
         String xPathSubElementToParse = "wfs:Name";
         return parseNode( protocolBinding, wfsCapabilities, xPathMainNodeToParse, xPathSubElementToParse );
@@ -55,12 +55,12 @@ public final class WfsDataProvider {
      * @param describeStoredQueryResponse
      *            the DescribeStoredQueries response document, never <code>null</code>
      * @return an array of an array with the StoredQueryDescription node and parsed Id element, never <code>null</code>
-     * @throws XPathFactoryConfigurationException
      * @throws XPathExpressionException
+     *             if the xpath expression could not be evaluated
      */
     public static Object[][] provideStoredQueryDescriptionNodes( ProtocolBinding protocolBinding,
                                                                  Document describeStoredQueryResponse )
-                    throws XPathFactoryConfigurationException, XPathExpressionException {
+                            throws XPathExpressionException {
         String xPathMainNodeToParse = "//wfs:StoredQueryDescription";
         String xPathSubElementToParse = "@id";
         return parseNode( protocolBinding, describeStoredQueryResponse, xPathMainNodeToParse, xPathSubElementToParse );
@@ -68,7 +68,7 @@ public final class WfsDataProvider {
 
     private static Object[][] parseNode( ProtocolBinding protocolBinding, Document doc, String xPathMainNodeToParse,
                                          String xPathSubElementToParse )
-                    throws XPathFactoryConfigurationException, XPathExpressionException {
+                            throws XPathExpressionException {
         XPath xPath = createXPath();
         NodeList mainNodes = (NodeList) xPath.evaluate( xPathMainNodeToParse, doc, NODESET );
         Object[][] resultNodesAndKeys = new Object[mainNodes.getLength()][];
@@ -80,12 +80,15 @@ public final class WfsDataProvider {
         return resultNodesAndKeys;
     }
 
-    private static XPath createXPath()
-                    throws XPathFactoryConfigurationException {
-        XPathFactory factory = XPathFactory.newInstance( XPathConstants.DOM_OBJECT_MODEL );
-        XPath xpath = factory.newXPath();
-        xpath.setNamespaceContext( NS_BINDINGS );
-        return xpath;
+    private static XPath createXPath() {
+        try {
+            XPathFactory factory = XPathFactory.newInstance( XPathConstants.DOM_OBJECT_MODEL );
+            XPath xpath = factory.newXPath();
+            xpath.setNamespaceContext( NS_BINDINGS );
+            return xpath;
+        } catch ( XPathFactoryConfigurationException e ) {
+            throw new RuntimeException( e );
+        }
     }
 
 }
