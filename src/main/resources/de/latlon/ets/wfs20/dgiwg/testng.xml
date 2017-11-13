@@ -7,7 +7,7 @@
     <listener class-name="org.opengis.cite.iso19142.SuiteFixtureListener" />
   </listeners>
 
-  <test name="Prerequisites">
+  <test name="Preconditions">
     <classes>
       <class name="org.opengis.cite.iso19142.SuitePreconditions" />
     </classes>
@@ -27,13 +27,13 @@
       <class name="org.opengis.cite.iso19136.components.FeatureComponentTests" />
     </classes>
   </test>
-  <test name="Simple WFS">
+  <test name="DGIWG Basic WFS">
+    <!--Simple WFS-->
     <packages>
       <package name="org.opengis.cite.iso19142.simple" />
     </packages>
-  </test>
-  <test name="Basic WFS">
     <classes>
+      <!-- Basic WFS "-->
       <class name="org.opengis.cite.iso19142.basic.BasicCapabilitiesTests" />
       <class name="org.opengis.cite.iso19142.basic.GetPropertyValueTests" />
       <class name="org.opengis.cite.iso19142.basic.BasicGetFeatureTests" />
@@ -44,64 +44,42 @@
       <class name="org.opengis.cite.iso19142.basic.filter.PropertyIsLikeOperatorTests" />
       <class name="org.opengis.cite.iso19142.basic.filter.ResourceIdFilterTests" />
       <class name="org.opengis.cite.iso19142.basic.filter.spatial.BBOXTests" />
-    </classes>
-  </test>
-  <test name="Transactional WFS">
-    <classes>
-      <class name="org.opengis.cite.iso19142.transaction.TransactionCapabilitiesTests" />
-      <class name="org.opengis.cite.iso19142.transaction.Update" />
-      <class name="org.opengis.cite.iso19142.transaction.InsertTests" />
-      <class name="org.opengis.cite.iso19142.transaction.ReplaceTests" />
-      <class name="org.opengis.cite.iso19142.transaction.DeleteTests" />
-    </classes>
-  </test>
-  <test name="Locking WFS">
-    <classes>
-      <class name="org.opengis.cite.iso19142.locking.LockingCapabilitiesTests" />
-      <class name="org.opengis.cite.iso19142.locking.LockFeatureTests" />
-      <class name="org.opengis.cite.iso19142.locking.GetFeatureWithLockTests" />
-    </classes>
-  </test>
-
-  <!-- DGIWG test suite -->
-  <test name="Supported operations - 7.2">
-    <classes>
+      <!--DGWIG Supported operations - 7.2 (Requirement 1-6) -->
       <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesAbstractTest" />
       <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesKeywordTest" />
       <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesAccessConstraintTest" />
       <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesVersionTest" />
       <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesFeatureTypeElementsTest" />
       <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.describestoredqueries.DescribeStoredQueriesElementsTest" />
-      <!-- Requirements 1-6 -->
-    </classes>
-  </test>
-
-
-  <test name="Supported filters - 7.3">
-    <classes>
+      <!--- DGIWG: Supported filters - 7.3 (Requirements 7-11) -->
       <class name="de.latlon.ets.wfs20.core.wfs20.testsuite.basic.filter.PropertyIsBetweenOperatorTests" />
       <class name="de.latlon.ets.wfs20.core.wfs20.testsuite.spatialfilter.SpatialFilterTest" />
       <class name="de.latlon.ets.wfs20.core.wfs20.testsuite.spatialfilter.ExtendedSpatialFilterTest" />
       <class name="de.latlon.ets.wfs20.core.wfs20.testsuite.temporalfilter.TemporalFilterTest" />
       <class name="de.latlon.ets.wfs20.core.wfs20.testsuite.temporalfilter.ExtendedTemporalFilterTest" />
-      <!-- Requirements 7-11 -->
-    </classes>
-  </test>
-
-  <test name="Locking - 8">
-    <classes>
-      <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesAbstractLockingTest" />
-      <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesOperationLockFeatureTest" />
-      <!-- Requirements 14-20 -->
-    </classes>
-  </test>
-
-  <test name="Additional requirements/recommendations - 9">
-    <classes>
+      <!-- DGIWG: Additional requirements/recommendations - 9 (Requirements 21-22) -->
       <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesSrsTest" />
       <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesOperationConstraintsTest" />
-      <!-- Requirements 21-22 -->
     </classes>
   </test>
+
+  <test name="DGIWG Locking (transactional) WFS">
+    <!-- Transactional WFS -->
+    <classes>
+      <class name="org.opengis.cite.iso19142.transaction.TransactionCapabilitiesTests" />
+      <class name="org.opengis.cite.iso19142.transaction.Update" />
+      <class name="org.opengis.cite.iso19142.transaction.InsertTests" />
+      <class name="org.opengis.cite.iso19142.transaction.ReplaceTests" />
+      <class name="org.opengis.cite.iso19142.transaction.DeleteTests" />
+      <!-- Locking WFS -->
+      <class name="org.opengis.cite.iso19142.locking.LockingCapabilitiesTests" />
+      <class name="org.opengis.cite.iso19142.locking.LockFeatureTests" />
+      <class name="org.opengis.cite.iso19142.locking.GetFeatureWithLockTests" />
+      <!-- DGIWG: Locking - 8 (Requirements 14-20) -->
+      <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesAbstractLockingTest" />
+      <class name="de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities.GetCapabilitiesOperationLockFeatureTest" />
+    </classes>
+  </test>
+
 
 </suite>

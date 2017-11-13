@@ -12,6 +12,13 @@
         <local-name>ets-${ets-code}-${version}</local-name>
         <title>DGIWG WFS 2.0 Conformance Test Suite</title>
         <description>Checks DGIWG WFS 2.0 implementations for conformance to DGIWG WFS 2.0 (DGIWG-122).</description>
+        <BasicConformanceClasses>
+          <conformanceClass>Preconditions</conformanceClass>
+          <conformanceClass>All GML application schemas</conformanceClass>
+          <conformanceClass>GML application schemas defining features</conformanceClass>
+          <conformanceClass>DGIWG Basic WFS</conformanceClass>
+          <conformanceClass>DGIWG Locking (transactional) WFS</conformanceClass>
+        </BasicConformanceClasses>
       </suite>
       <revision>
         <name>${project.version}</name>
