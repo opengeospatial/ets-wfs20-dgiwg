@@ -3,4 +3,5 @@
 <properties version="1.0">
   <comment>DGIWG WFS reference implementation</comment>
   <entry key="wfs">http://cite.lat-lon/deegree-webservices/services/wfsdgiwg?request=GetCapabilities&amp;service=WFS&amp;version=1.0.0</entry>
+  <entry key="fid" />
 </properties>
