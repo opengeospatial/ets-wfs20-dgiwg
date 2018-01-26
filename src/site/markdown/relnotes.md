@@ -1,6 +1,10 @@
 
 # Release Notes
 
+## 0.4 (2018-01-26)
+- Fix [#8](https://github.com/opengeospatial/ets-wfs20-dgiwg/issues/8) - Update ets-wfs20 version to 1.28
+- Fix [#4](https://github.com/opengeospatial/ets-wfs20-dgiwg/issues/4) - Tests are skipped without reason
+
 ## 0.3 (2017-11-13)
 - Fix [#2](https://github.com/opengeospatial/ets-wfs20-dgiwg/issues/2) - Add conformance class configuration
 
