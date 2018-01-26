@@ -141,7 +141,7 @@
     <dependency>
       <groupId>org.opengis.cite</groupId>
       <artifactId>ets-wfs20</artifactId>
-      <version>1.26</version>
+      <version>1.28</version>
     </dependency>
     <!-- test -->
     <dependency>
