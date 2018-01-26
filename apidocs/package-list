@@ -1,0 +1,13 @@
+de.latlon.ets.wfs20.core
+de.latlon.ets.wfs20.core.assertion
+de.latlon.ets.wfs20.core.client
+de.latlon.ets.wfs20.core.dgiwg.testsuite
+de.latlon.ets.wfs20.core.dgiwg.testsuite.dataprovider
+de.latlon.ets.wfs20.core.dgiwg.testsuite.describestoredqueries
+de.latlon.ets.wfs20.core.dgiwg.testsuite.getcapabilities
+de.latlon.ets.wfs20.core.domain
+de.latlon.ets.wfs20.core.utils
+de.latlon.ets.wfs20.core.wfs20.testsuite.basic.filter
+de.latlon.ets.wfs20.core.wfs20.testsuite.spatialfilter
+de.latlon.ets.wfs20.core.wfs20.testsuite.temporalfilter
+de.latlon.ets.wfs20.dgiwg
