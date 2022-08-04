@@ -198,7 +198,7 @@
     <dependency>
       <groupId>org.opengis.cite</groupId>
       <artifactId>geomatics-geotk</artifactId>
-      <version>1.14</version>
+      <version>1.16</version>
     </dependency>
   </dependencies>
 
