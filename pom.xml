@@ -60,7 +60,7 @@
     <spec-version>2.0</spec-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <buildTimestamp>${maven.build.timestamp}</buildTimestamp>
-    <docker.teamengine.version>5.0</docker.teamengine.version>
+    <docker.teamengine.version>5.5.2</docker.teamengine.version>
   </properties>
 
   <build>
