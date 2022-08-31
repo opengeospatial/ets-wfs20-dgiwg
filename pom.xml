@@ -222,6 +222,25 @@
           <scmBranch>gh-pages</scmBranch>
         </configuration>
       </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.4</version>
+        <configuration>
+          <docfilessubdirs>true</docfilessubdirs>
+          <show>package</show>
+          <links>
+            <link>http://testng.org/javadocs/</link>
+          </links>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
@@ -289,26 +308,6 @@
             <reports>
               <report>license</report>
               <report>issue-tracking</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.4</version>
-        <reportSets>
-          <reportSet>
-            <id>default</id>
-            <configuration>
-              <docfilessubdirs>true</docfilessubdirs>
-              <show>package</show>
-              <links>
-                <link>http://testng.org/javadocs/</link>
-              </links>
-            </configuration>
-            <reports>
-              <report>javadoc</report>
             </reports>
           </reportSet>
         </reportSets>
