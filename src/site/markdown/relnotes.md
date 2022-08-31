@@ -1,6 +1,11 @@
 
 # Release Notes
 
+## 0.6 (2022-08-31)
+- [#20](https://github.com/opengeospatial/ets-wfs20-dgiwg/issues/20) - Publication to Central Maven Repository failed
+- [#26](https://github.com/opengeospatial/ets-wfs20-dgiwg/pull/26) - Set ets-wfs20 to v1.34
+- [#21](https://github.com/opengeospatial/ets-wfs20-dgiwg/issues/21) - Introduce Dockerfile and Maven Docker plugin
+
 ## 0.5 (2022-08-19)
 - [#16](https://github.com/opengeospatial/ets-wfs20-dgiwg/pull/16) - Set ets-dgiwg-core to v0.5
 - [#19](https://github.com/opengeospatial/ets-wfs20-dgiwg/pull/19) - Set ets-wfs20 to v1.38
