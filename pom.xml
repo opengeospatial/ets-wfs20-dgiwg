@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opengis.cite</groupId>
   <artifactId>ets-wfs20-dgiwg</artifactId>
-  <version>0.7-SNAPSHOT</version>
+  <version>0.7</version>
   <name>DGIWG WFS 2.0 Conformance Test Suite</name>
   <description>Conformance test suite for the DGIWG WFS 2.0 profile (DGIWG-122).</description>
 
@@ -29,7 +29,7 @@
     <url>https://github.com/opengeospatial/ets-wfs20-dgiwg</url>
     <connection>scm:git:https://github.com/opengeospatial/ets-wfs20-dgiwg.git</connection>
     <developerConnection>scm:git:git@github.com:opengeospatial/ets-wfs20-dgiwg.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>0.7</tag>
   </scm>
 
   <issueManagement>
