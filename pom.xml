@@ -253,7 +253,7 @@
     <dependency>
       <groupId>org.opengis.cite</groupId>
       <artifactId>ets-wfs20</artifactId>
-      <version>1.34</version>
+      <version>1.40</version>
     </dependency>
     <!-- test -->
     <dependency>
