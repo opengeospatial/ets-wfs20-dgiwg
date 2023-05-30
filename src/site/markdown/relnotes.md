@@ -1,6 +1,10 @@
 
 # Release Notes
 
+## 0.7 (2023-05-30)
+- [#32](https://github.com/opengeospatial/ets-wfs20-dgiwg/issues/32) - Update ets-wfs20 dependency to v1.40
+- [#30](https://github.com/opengeospatial/ets-wfs20-dgiwg/pull/30) - Upgrade TEAM Engine dependency to v5.6.1
+
 ## 0.6 (2022-08-31)
 - [#20](https://github.com/opengeospatial/ets-wfs20-dgiwg/issues/20) - Publication to Central Maven Repository failed
 - [#26](https://github.com/opengeospatial/ets-wfs20-dgiwg/pull/26) - Set ets-wfs20 to v1.34
