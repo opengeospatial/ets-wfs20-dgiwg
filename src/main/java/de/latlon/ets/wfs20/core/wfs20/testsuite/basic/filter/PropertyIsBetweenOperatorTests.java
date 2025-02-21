@@ -19,7 +19,6 @@ import java.util.Set;
 import java.util.logging.Level;
 
 import javax.xml.XMLConstants;
-import javax.xml.bind.DatatypeConverter;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.namespace.QName;
@@ -45,6 +44,7 @@ import org.w3c.dom.NodeList;
 
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
+import jakarta.xml.bind.DatatypeConverter;
 
 /**
  * Tests the response to a GetFeature request that includes a {@code PropertyIsBetween}

@@ -5,10 +5,10 @@ import static org.junit.Assert.assertThat;
 
 import java.util.Calendar;
 
-import javax.xml.bind.DatatypeConverter;
-
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
+
+import jakarta.xml.bind.DatatypeConverter;
 
 /**
  * @author <a href="mailto:goltz@lat-lon.de">Lyn Goltz</a>
