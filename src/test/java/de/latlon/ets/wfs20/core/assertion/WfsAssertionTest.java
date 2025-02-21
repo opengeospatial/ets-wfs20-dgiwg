@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.latlon.ets.wfs20.core.assertion;
 
@@ -22,35 +22,30 @@ import org.xml.sax.SAXException;
  */
 public class WfsAssertionTest {
 
-    @Test
-    public void testAssertVersion202WithCapabilitiesVersion202()
-                    throws Exception {
-        assertVersion202( wfsCapabilitiesVersion202() );
-    }
-    
-    @Test(expected = AssertionError.class)
-    public void testAssertVersion202WithCapabilitiesVersion200ShouldFail()
-                    throws Exception {
-        assertVersion202( wfsCapabilitiesVersion200() );
-    }
+	@Test
+	public void testAssertVersion202WithCapabilitiesVersion202() throws Exception {
+		assertVersion202(wfsCapabilitiesVersion202());
+	}
 
-    private Document wfsCapabilitiesVersion200()
-                    throws ParserConfigurationException, SAXException, IOException {
-        return wfsCapabilities( "../capabilities_wfs200.xml" );
-    }
+	@Test(expected = AssertionError.class)
+	public void testAssertVersion202WithCapabilitiesVersion200ShouldFail() throws Exception {
+		assertVersion202(wfsCapabilitiesVersion200());
+	}
 
-    private Document wfsCapabilitiesVersion202()
-            throws ParserConfigurationException, SAXException, IOException {
-    	return wfsCapabilities( "../capabilities_wfs202.xml" );
-    }
+	private Document wfsCapabilitiesVersion200() throws ParserConfigurationException, SAXException, IOException {
+		return wfsCapabilities("../capabilities_wfs200.xml");
+	}
 
-    private Document wfsCapabilities( String resource )
-                    throws ParserConfigurationException, SAXException, IOException {
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        factory.setNamespaceAware( true );
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        InputStream wfsCapabilities = WfsAssertionTest.class.getResourceAsStream( resource );
-        return builder.parse( new InputSource( wfsCapabilities ) );
-    }
-    
+	private Document wfsCapabilitiesVersion202() throws ParserConfigurationException, SAXException, IOException {
+		return wfsCapabilities("../capabilities_wfs202.xml");
+	}
+
+	private Document wfsCapabilities(String resource) throws ParserConfigurationException, SAXException, IOException {
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setNamespaceAware(true);
+		DocumentBuilder builder = factory.newDocumentBuilder();
+		InputStream wfsCapabilities = WfsAssertionTest.class.getResourceAsStream(resource);
+		return builder.parse(new InputSource(wfsCapabilities));
+	}
+
 }

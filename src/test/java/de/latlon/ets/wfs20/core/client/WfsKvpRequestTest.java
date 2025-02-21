@@ -13,37 +13,37 @@ import de.latlon.ets.wfs20.core.client.WfsKvpRequest;
  */
 public class WfsKvpRequestTest {
 
-    @Test
-    public void testAsQueryString() {
-        WfsKvpRequest wfsKvpRequest = new WfsKvpRequest();
-        wfsKvpRequest.addKvp( "key1", "value1" );
-        wfsKvpRequest.addKvp( "key2", "value2" );
+	@Test
+	public void testAsQueryString() {
+		WfsKvpRequest wfsKvpRequest = new WfsKvpRequest();
+		wfsKvpRequest.addKvp("key1", "value1");
+		wfsKvpRequest.addKvp("key2", "value2");
 
-        String queryString = wfsKvpRequest.asQueryString();
+		String queryString = wfsKvpRequest.asQueryString();
 
-        assertThat( queryString, CoreMatchers.anyOf( is( "key1=value1&key2=value2" ), is( "key2=value2&key1=value1" ) ) );
-    }
+		assertThat(queryString, CoreMatchers.anyOf(is("key1=value1&key2=value2"), is("key2=value2&key1=value1")));
+	}
 
-    @Test
-    public void testAsQueryStringOverwriteKey() {
-        WfsKvpRequest wfsKvpRequest = new WfsKvpRequest();
-        wfsKvpRequest.addKvp( "key2", "value2" );
-        wfsKvpRequest.addKvp( "key2", "value3" );
+	@Test
+	public void testAsQueryStringOverwriteKey() {
+		WfsKvpRequest wfsKvpRequest = new WfsKvpRequest();
+		wfsKvpRequest.addKvp("key2", "value2");
+		wfsKvpRequest.addKvp("key2", "value3");
 
-        String queryString = wfsKvpRequest.asQueryString();
+		String queryString = wfsKvpRequest.asQueryString();
 
-        assertThat( queryString, is( "key2=value3" ) );
-    }
+		assertThat(queryString, is("key2=value3"));
+	}
 
-    @Test
-    public void testAsQueryStringNullKey() {
-        WfsKvpRequest wfsKvpRequest = new WfsKvpRequest();
-        wfsKvpRequest.addKvp( "key1", "value1" );
-        wfsKvpRequest.addKvp( null, "value2" );
+	@Test
+	public void testAsQueryStringNullKey() {
+		WfsKvpRequest wfsKvpRequest = new WfsKvpRequest();
+		wfsKvpRequest.addKvp("key1", "value1");
+		wfsKvpRequest.addKvp(null, "value2");
 
-        String queryString = wfsKvpRequest.asQueryString();
+		String queryString = wfsKvpRequest.asQueryString();
 
-        assertThat( queryString, is( "key1=value1" ) );
-    }
+		assertThat(queryString, is("key1=value1"));
+	}
 
 }
