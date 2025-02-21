@@ -43,7 +43,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import com.sun.jersey.api.client.ClientResponse;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 
 /**
  * Tests the response to a GetFeature request that includes a {@code PropertyIsBetween} filter that compares the value
@@ -83,10 +84,10 @@ public class PropertyIsBetweenOperatorTests extends QueryFilterFixture {
             WFSMessage.appendSimpleQuery( this.reqEntity, featureType );
             addPropertyIsBetweenPredicate( this.reqEntity, propName, propValueMin, propValueMax );
 
-            ClientResponse rsp = wfsClient.submitRequest( reqEntity, binding );
+            Response rsp = wfsClient.submitRequest( reqEntity, binding );
             this.rspEntity = extractBodyAsDocument(rsp);
 
-            assertEquals( rsp.getStatus(), ClientResponse.Status.OK.getStatusCode(),
+            assertEquals( rsp.getStatus(), Status.OK.getStatusCode(),
                           ErrorMessage.get( ErrorMessageKeys.UNEXPECTED_STATUS ) );
 
             NodeList features = this.rspEntity.getElementsByTagNameNS( featureType.getNamespaceURI(),
@@ -128,9 +129,9 @@ public class PropertyIsBetweenOperatorTests extends QueryFilterFixture {
             WFSMessage.appendSimpleQuery( this.reqEntity, featureType );
             addPropertyIsBetweenPredicate( this.reqEntity, propName, "1355941270", "1355941271" );
 
-            ClientResponse rsp = wfsClient.submitRequest( reqEntity, binding );
-            this.rspEntity = rsp.getEntity( Document.class );
-            assertEquals( rsp.getStatus(), ClientResponse.Status.BAD_REQUEST.getStatusCode(),
+            Response rsp = wfsClient.submitRequest( reqEntity, binding );
+            this.rspEntity = rsp.readEntity( Document.class );
+            assertEquals( rsp.getStatus(), Status.BAD_REQUEST.getStatusCode(),
                           ErrorMessage.get( ErrorMessageKeys.UNEXPECTED_STATUS ) );
             String xpath = "//ows:Exception[@exceptionCode='InvalidParameterValue']";
             assertXPath( xpath, this.rspEntity, null );

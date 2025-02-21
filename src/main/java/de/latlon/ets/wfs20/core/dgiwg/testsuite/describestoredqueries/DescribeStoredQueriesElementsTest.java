@@ -13,10 +13,9 @@ import org.testng.annotations.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
-import com.sun.jersey.api.client.ClientResponse;
-
 import de.latlon.ets.wfs20.core.dgiwg.testsuite.WfsBaseFixture;
 import de.latlon.ets.wfs20.core.dgiwg.testsuite.dataprovider.WfsDataProvider;
+import jakarta.ws.rs.core.Response;
 
 /**
  * Tests if the StoredQueryDescribtion nodes from DescribeStoredQueries response contains the expected elements.
@@ -31,8 +30,8 @@ public class DescribeStoredQueriesElementsTest extends WfsBaseFixture {
         initBaseFixture( testContext );
         initRequestEntity( getClass().getResourceAsStream( "/org/opengis/cite/iso19142/simple/DescribeStoredQueries.xml" ) );
 
-        ClientResponse rsp = wfsClient.submitRequest( reqEntity, GET );
-        return WfsDataProvider.provideStoredQueryDescriptionNodes( GET, rsp.getEntity( Document.class ) );
+        Response rsp = wfsClient.submitRequest( reqEntity, GET );
+        return WfsDataProvider.provideStoredQueryDescriptionNodes( GET, rsp.readEntity( Document.class ) );
     }
 
     @Test(description = "DGIWG - Web Feature Service 2.0 Profile, 7.2.1., S.22, Requirement 6", dataProvider = "storedQueryDescriptionNodes")

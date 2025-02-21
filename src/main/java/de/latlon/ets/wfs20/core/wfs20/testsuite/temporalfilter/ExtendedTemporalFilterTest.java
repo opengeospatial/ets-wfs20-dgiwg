@@ -21,8 +21,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.w3c.dom.Element;
 
-import com.sun.jersey.api.client.ClientResponse;
 import de.latlon.ets.wfs20.core.utils.ValidationUtils;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 
 /**
  * Extends the 09-026R2 Temporal Filter CC by testing if After and Before are supported.
@@ -71,8 +72,8 @@ public class ExtendedTemporalFilterTest extends AbstractTemporalFilterTest {
         addTemporalOperatorPredicate( this.reqEntity, temporalOperatorName, valueRef,
                                       featureTypeToPropertyAndValue.getValueRange() );
 
-        ClientResponse rsp = wfsClient.submitRequest( reqEntity, binding );
-        assertEquals( rsp.getStatus(), ClientResponse.Status.OK.getStatusCode(),
+        Response rsp = wfsClient.submitRequest( reqEntity, binding );
+        assertEquals( rsp.getStatus(), Status.OK.getStatusCode(),
                       ErrorMessage.get( ErrorMessageKeys.UNEXPECTED_STATUS ) );
         this.rspEntity = extractBodyAsDocument(rsp);
         assertSchemaValid( wfsSchema, this.rspEntity );

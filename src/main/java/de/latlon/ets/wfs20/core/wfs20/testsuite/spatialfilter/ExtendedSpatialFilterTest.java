@@ -29,8 +29,9 @@ import org.testng.annotations.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import com.sun.jersey.api.client.ClientResponse;
 import de.latlon.ets.wfs20.core.utils.ValidationUtils;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 
 /**
  * Extends the 09-026R2 Spatial Filter CC by testing if all SpatialOperators are supported.
@@ -94,8 +95,8 @@ public class ExtendedSpatialFilterTest extends AbstractSpatialFilterTest {
         Document gmlEnv = Extents.envelopeAsGML( featureInfo.get( featureType ).getSpatialExtent() );
         addSpatialOperatorPredicate( this.reqEntity, spatialOperatorName, gmlEnv.getDocumentElement(), valueRef );
 
-        ClientResponse rsp = wfsClient.submitRequest( reqEntity, binding );
-        assertEquals( rsp.getStatus(), ClientResponse.Status.OK.getStatusCode(),
+        Response rsp = wfsClient.submitRequest( reqEntity, binding );
+        assertEquals( rsp.getStatus(), Status.OK.getStatusCode(),
                       ErrorMessage.get( ErrorMessageKeys.UNEXPECTED_STATUS ) );
         this.rspEntity = extractBodyAsDocument(rsp);
         assertSchemaValid( wfsSchema, this.rspEntity );
