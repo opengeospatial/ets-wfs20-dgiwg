@@ -13,9 +13,9 @@ import de.latlon.ets.wfs20.core.dgiwg.testsuite.WfsBaseFixture;
  */
 public class GetCapabilitiesVersionTest extends WfsBaseFixture {
 
-    @Test(description = "DGIWG - Web Feature Service 2.0 Profile, 7.2.1., S.15")
-    public void wfsCapabilitiesIsVersion202() {
-        assertVersion202( this.wfsMetadata );
-    }
+	@Test(description = "DGIWG - Web Feature Service 2.0 Profile, 7.2.1., S.15")
+	public void wfsCapabilitiesIsVersion202() {
+		assertVersion202(this.wfsMetadata);
+	}
 
 }

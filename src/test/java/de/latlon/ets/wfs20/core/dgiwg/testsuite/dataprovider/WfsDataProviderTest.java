@@ -21,52 +21,45 @@ import org.xml.sax.SAXException;
  */
 public class WfsDataProviderTest {
 
-    @Test
-    public void testProvideFeatureTypeNodes()
-                    throws Exception {
-        Object[][] featureTypeNodes = WfsDataProvider.provideFeatureTypeNodes( GET, wfsCapabilities() );
+	@Test
+	public void testProvideFeatureTypeNodes() throws Exception {
+		Object[][] featureTypeNodes = WfsDataProvider.provideFeatureTypeNodes(GET, wfsCapabilities());
 
-        assertThat( featureTypeNodes.length, is( 18 ) );
-    }
+		assertThat(featureTypeNodes.length, is(18));
+	}
 
-    @Test(expected = Exception.class)
-    public void testProvideFeatureTypeNodesWithNullShouldThrowException()
-                    throws Exception {
-        WfsDataProvider.provideFeatureTypeNodes( GET, null );
-    }
+	@Test(expected = Exception.class)
+	public void testProvideFeatureTypeNodesWithNullShouldThrowException() throws Exception {
+		WfsDataProvider.provideFeatureTypeNodes(GET, null);
+	}
 
-    @Test
-    public void testProvideStoredQueryDescriptionNodes()
-                    throws Exception {
-        Object[][] storedQueryDesciptionNodes = WfsDataProvider.provideStoredQueryDescriptionNodes( GET,
-                                                                                                    describeStoredQueries() );
+	@Test
+	public void testProvideStoredQueryDescriptionNodes() throws Exception {
+		Object[][] storedQueryDesciptionNodes = WfsDataProvider.provideStoredQueryDescriptionNodes(GET,
+				describeStoredQueries());
 
-        assertThat( storedQueryDesciptionNodes.length, is( 2 ) );
-    }
+		assertThat(storedQueryDesciptionNodes.length, is(2));
+	}
 
-    @Test(expected = Exception.class)
-    public void testProvideStoredQueryDescriptionNodesWithNullShouldThrowException()
-                    throws Exception {
-        WfsDataProvider.provideStoredQueryDescriptionNodes( GET, null );
-    }
+	@Test(expected = Exception.class)
+	public void testProvideStoredQueryDescriptionNodesWithNullShouldThrowException() throws Exception {
+		WfsDataProvider.provideStoredQueryDescriptionNodes(GET, null);
+	}
 
-    private Document wfsCapabilities()
-                    throws SAXException, IOException, ParserConfigurationException {
-        return capabilities( "../../../capabilities_wfs200.xml" );
-    }
+	private Document wfsCapabilities() throws SAXException, IOException, ParserConfigurationException {
+		return capabilities("../../../capabilities_wfs200.xml");
+	}
 
-    private Document describeStoredQueries()
-                    throws SAXException, IOException, ParserConfigurationException {
-        return capabilities( "../../../describeStoredQueries_wfs200.xml" );
-    }
+	private Document describeStoredQueries() throws SAXException, IOException, ParserConfigurationException {
+		return capabilities("../../../describeStoredQueries_wfs200.xml");
+	}
 
-    private Document capabilities( String resource )
-                    throws ParserConfigurationException, SAXException, IOException {
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        factory.setNamespaceAware( true );
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        InputStream wfsCapabilities = WfsDataProviderTest.class.getResourceAsStream( resource );
-        return builder.parse( new InputSource( wfsCapabilities ) );
-    }
+	private Document capabilities(String resource) throws ParserConfigurationException, SAXException, IOException {
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setNamespaceAware(true);
+		DocumentBuilder builder = factory.newDocumentBuilder();
+		InputStream wfsCapabilities = WfsDataProviderTest.class.getResourceAsStream(resource);
+		return builder.parse(new InputSource(wfsCapabilities));
+	}
 
 }
